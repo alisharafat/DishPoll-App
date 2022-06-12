@@ -1,0 +1,30 @@
+.dish{
+    border: 1px solid #ccc;
+    width: 300px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    position: relative;
+    height: 380px;
+}
+
+.dish img{
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+}
+
+.poll-btn{
+    border: 1px solid #ccc;
+    margin-top: 20px;
+    bottom: 5px;
+    position: absolute;
+    bottom: 10px;
+    padding: 16px 8px;
+    width: 93%;
+    box-sizing: border-box;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #f2e6de;
+}

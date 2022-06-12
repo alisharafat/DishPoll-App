@@ -1,0 +1,35 @@
+nav{
+   background-color: #6a040f;
+   padding: 16px 8px;
+   color: white;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap ;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav ul li:nth-of-type(1){
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+nav ul li a{
+    color: white;
+    font-size: 1.2rem;
+}
+
+nav ul li:last-of-type button{
+    background-color: none;
+    padding: 12px 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: rgb(66, 24, 24);
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border: none;
+}

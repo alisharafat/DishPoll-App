@@ -1,0 +1,19 @@
+.leaderboard{
+    border: 1px solid black;
+    width: 360px;
+    margin: 30px auto;
+    padding: 16px;
+    list-style: none;
+}
+
+.leaderboard li{
+    border: 1px solid #ccc;
+    padding: 16px;
+    margin-bottom: 4px;
+    border-radius: 5px;
+    background-color: #ffccd5;
+}
+
+.leaderboard li span{
+    font-weight: bold;
+}
