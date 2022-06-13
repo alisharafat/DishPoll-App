@@ -16,10 +16,11 @@ const AllDishes = () => {
     
     useEffect(() => {
         if (!currentUser) {
+            alert("please login!!!")
             navigate('/login');
         }
 
-    });
+    },[]);
 
     useEffect(() => {
         setrankedDishList(() => []);
@@ -40,7 +41,6 @@ const AllDishes = () => {
                 return;
             }
         }
-        console.log(`Food with dishid ${dishid} set to rank 1 for current User`);
         setRankedDishes({ ...rankedDishes, rank1: dishid });
     }
     const setDishAsRank2 = (dishid) => {
@@ -50,7 +50,6 @@ const AllDishes = () => {
                 return;
             }
         }
-        console.log(`Food with dishid ${dishid} set to rank 2 for current User`);
         setRankedDishes({ ...rankedDishes, rank2: dishid });
     }
     const setDishAsRank3 = (dishid) => {
@@ -67,7 +66,6 @@ const AllDishes = () => {
     const saveUserRankedDishListHandler = () => {
         try {
             const userDishRankedStore = JSON.parse(window.localStorage.getItem('UserDishRankedStore') || '{}');
-            console.log(userDishRankedStore);
             const currentUser = JSON.parse(window.localStorage.getItem('currentUser'));
             userDishRankedStore[currentUser.id]= rankedDishList;
             localStorage.setItem('UserDishRankedStore', JSON.stringify(userDishRankedStore));
@@ -77,7 +75,6 @@ const AllDishes = () => {
         }
     }
 
-    console.log(rankedDishList);
 
     return (
         <div className={styles.alldishes}>

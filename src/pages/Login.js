@@ -22,7 +22,6 @@ const Login = () => {
         const foundUser = users.find((user) => user.username === username);
         
         if (foundUser && foundUser.password === password) {
-            console.log(`Logging the user in...`);
             window.localStorage.setItem('currentUser', JSON.stringify(foundUser));
             navigate('/dishes');
         } else {

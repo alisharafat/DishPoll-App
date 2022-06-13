@@ -8,13 +8,14 @@ import { DishStoreContextProvider } from './store/dish-store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+
+  
     <Router>
       <DishStoreContextProvider>
         <App />
       </DishStoreContextProvider>
     </Router>
-  </React.StrictMode>
+  
 );
 
 // If you want to start measuring performance in your app, pass a function

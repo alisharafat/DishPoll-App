@@ -1,12 +1,33 @@
 import React, { useContext, useEffect, useState } from 'react';
 import DishesContext from '../store/dish-store';
 import styles from './Leaderboard.module.css';
+import { useNavigate } from 'react-router-dom';
+
 
 const Leaderboard = () => {
 
     const UserDishRankedStore = JSON.parse(window.localStorage.getItem('UserDishRankedStore'));
     const [topRatedDish, setTopRatedDish] = useState([]);
     const { dishes } = useContext(DishesContext);
+    const currentUser = JSON.parse(window.localStorage.getItem('currentUser')) ;
+    const navigate = useNavigate();
+    let check=UserDishRankedStore[currentUser.id];
+
+    useEffect(() => {
+        if (!currentUser) {
+            alert("please login!!!")
+            navigate('/login');
+        }
+
+        if(check==undefined){
+            alert("vote first to see the leaderboard");
+            navigate('/login');
+
+        }
+        
+
+    });
+
 
     useEffect(() => {
         const mp = new Map();
@@ -30,9 +51,16 @@ const Leaderboard = () => {
                 {
                     topRatedDish.length && topRatedDish.map((dish,idx) => {
                         const foundFood = dishes.find((food) => food.id === dish[0]);
-                        return <li key={idx}>
-                            <span>{ idx+1 }</span> { foundFood && foundFood.dishName}
+                        if(foundFood ){
+                            return  <li key={idx} 
+                        style={ foundFood.id===check[0] 
+                        || foundFood.id=== check[1] 
+                        || foundFood.id=== check[2]  ? {backgroundColor:"blue"}:{}}>
+                            <span>{ idx+1 }:</span> { foundFood.dishName} 
+                            
                         </li>
+
+                        }                                    
                     })
                 }
             </ul>
