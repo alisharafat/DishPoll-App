@@ -1,7 +1,12 @@
-.alldishes{
+.alldishes {
     display: flex;
     justify-content: space-evenly;
     margin-top: 30px;
+}
+.alldishes .inputBox{
+    width: 150px;
+    height: 150px;
+    border: 2px solid black;
 }
 
 .alldishes section {
@@ -25,3 +30,5 @@
 .alldishes section ul{
     padding: 5px ;
 }
+
+

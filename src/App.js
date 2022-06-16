@@ -16,6 +16,7 @@ function App() {
         <Route path='/dishes' element={<AllDishes />} />
         <Route path='/leaderboard' element={<Leaderboard/>}/>
       </Routes>
+      
     </Layout>
   );
 }

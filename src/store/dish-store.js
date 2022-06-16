@@ -31,6 +31,7 @@ export const DishStoreContextProvider = (props) => {
     return (
         <DishesContext.Provider value={ctx}>
             {props.children}
+            {/* {console.log(props.children)} */}
       </DishesContext.Provider>
     )
 }

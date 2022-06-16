@@ -13,8 +13,14 @@ const AllDishes = () => {
     const currentUser = JSON.parse(window.localStorage.getItem('currentUser')) || null;
 
     const { dishes } = useContext(DishesContext);
+
+    
+
+    
+
     
     useEffect(() => {
+
         if (!currentUser) {
             alert("please login!!!")
             navigate('/login');
@@ -23,6 +29,7 @@ const AllDishes = () => {
     },[]);
 
     useEffect(() => {
+
         setrankedDishList(() => []);
         const temp = [];
         if (rankedDishes['rank1'] && rankedDishes['rank2'] && rankedDishes['rank3']) {
@@ -59,7 +66,6 @@ const AllDishes = () => {
                 return;
             }
         }
-        console.log(`Food with dishid ${dishid} set to rank 3 for current User`);
         setRankedDishes({ ...rankedDishes, rank3: dishid });
     }
 
@@ -78,6 +84,7 @@ const AllDishes = () => {
 
     return (
         <div className={styles.alldishes}>
+           
           
             {currentUser && <DishList
                 dishes={dishes}
