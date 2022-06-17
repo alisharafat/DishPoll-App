@@ -1,19 +1,29 @@
 .leaderboard{
     border: 1px solid black;
-    width: 360px;
+    width: 400px;
     margin: 30px auto;
     padding: 16px;
     list-style: none;
 }
+.leaderboard h1{
+    text-align: center;
+}
 
-.leaderboard li{
+.leaderboard ul li{
     border: 1px solid #ccc;
     padding: 16px;
     margin-bottom: 4px;
     border-radius: 5px;
     background-color: #ffccd5;
+    list-style-type: none;
 }
 
 .leaderboard li span{
     font-weight: bold;
+}
+
+.selected-dish{
+    font-weight: bold;
+    font-style: italic;
+    text-transform: uppercase;
 }
